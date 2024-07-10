@@ -27,6 +27,19 @@ public class Client {
     @Column(nullable = false)
     private String email;
 
+
+    public Client() {
+        // Empty constructor for JPA
+    }
+    public Client(long clientId, String firstName, String lastName, String address, String phone, String email) {
+        this.clientId = clientId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+    }
+
     public long getClientId() {
         return clientId;
     }
@@ -35,6 +48,13 @@ public class Client {
         this.clientId = clientId;
     }
 
-    // Getters and Setters (omitted for brevity)
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
 
 }

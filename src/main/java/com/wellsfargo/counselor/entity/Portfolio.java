@@ -33,6 +33,11 @@ public class Portfolio {
     @JoinColumn(name = "clientId", nullable = false)
     private Client client;
 
+
+    public Portfolio() {
+        // Empty constructor for JPA
+    }
+
     public long getPortfolioId() {
         return portfolioId;
     }
@@ -41,6 +46,17 @@ public class Portfolio {
         this.portfolioId = portfolioId;
     }
 
-    // Getters and Setters (omitted for brevity)
+    public Portfolio(long portfolioId) {
+        this.portfolioId = portfolioId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
 }

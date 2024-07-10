@@ -6,7 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
-import java.util.List;
+
+
 
 @Entity
 public class Security {
@@ -18,8 +19,10 @@ public class Security {
     @Column(nullable = false)
     private String category;
 
-    @OneToMany(mappedBy = "security")
-    private List<Portfolio> portfolios;
+    public Security() {
+
+    }
+
 
     public long getSecurityId() {
         return securityId;
@@ -29,6 +32,19 @@ public class Security {
         this.securityId = securityId;
     }
 
-    // Getters and Setters (omitted for brevity)
+    public Security(long securityId) {
+        this.securityId = securityId;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+
+
 
 }
